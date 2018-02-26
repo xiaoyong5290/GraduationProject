@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--<typeAliases>-->
+        <!--<typeAlias alias="UserInfo" type="com.xiaoyong.entity.UserInfo"/>-->
+    <!--</typeAliases>-->
+    <!--配置mappers标签会出现错误：java.lang.IllegalArgumentException:
+     Result Maps collection already contains value for
+     com.xiaoyong.dao.xxxMapper.xxxResultMap
+     错误原因目前未知-->
+    <!--<mappers>-->
+    <!--<mapper url="classpath:mapping/UserInfoMapper.xml" />-->
+    <!--</mappers>-->
+
+    <!-- 配置别名 -->
+    <typeAliases>
+        <!-- 批量扫描别名 -->
+        <package name="com.xiaoyong.entity"/>
+    </typeAliases>
+
+</configuration>
