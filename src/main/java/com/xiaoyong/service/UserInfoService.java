@@ -1,11 +1,9 @@
 package com.xiaoyong.service;
 
 
-import com.xiaoyong.entity.UserInfo;
-
 import java.util.List;
 
 public interface UserInfoService {
-    UserInfo queryById(Integer userId);
-    List<UserInfo> queryAll();
+    com.xiaoyong.model.entity.UserInfo queryById(Integer userId);
+    List<com.xiaoyong.model.entity.UserInfo> queryAll();
 }

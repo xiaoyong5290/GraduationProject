@@ -4,8 +4,15 @@
           xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
           version="3.1">
 
-  <display-name>SSM2.0</display-name>
+  <display-name>SharingWebapp</display-name>
 
+  <welcome-file-list>
+    <welcome-file>/jsp/index.jsp</welcome-file>
+  </welcome-file-list>
+
+  <listener>
+    <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+  </listener>
   <!-- spring监听器 -->
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -42,10 +49,6 @@
   <listener>
     <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
   </listener>
-
-  <welcome-file-list>
-    <welcome-file>/index.jsp</welcome-file>
-  </welcome-file-list>
 
   <!-- session配置 -->
   <session-config>

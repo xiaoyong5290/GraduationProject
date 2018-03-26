@@ -1,6 +1,6 @@
 <html>
 <body>
-<h2>Hello World!</h2>
+<h2>HaHa!</h2>
 ${info}
 </body>
 </html>

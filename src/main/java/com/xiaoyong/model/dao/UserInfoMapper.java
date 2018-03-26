@@ -1,9 +1,16 @@
-package com.xiaoyong.dao;
+package com.xiaoyong.model.dao;
 
-import com.xiaoyong.entity.UserInfo;
+
+import com.xiaoyong.model.entity.UserInfo;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
+ /**
+    *    @author  : XiaoYong
+    *    @date    : 2018/3/24 14:25
+    *    Description    :
+    */
 
 @Repository
 public interface UserInfoMapper {

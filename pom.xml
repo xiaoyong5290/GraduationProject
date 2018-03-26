@@ -7,7 +7,7 @@
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <!--<name>web-ssm Maven Webapp</name>-->
-  <!--<url>http://maven.apache.org</url>-->
+  <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -27,123 +27,16 @@
     <slf4j.version>1.7.25</slf4j.version>
     <log4j.version>1.2.17</log4j.version>
 
-    <!--mybatis-generator自动生成-->
-    <mybatis-generator.version>1.3.2</mybatis-generator.version>
+    <!--druid数据源版本-->
+    <druid.version>1.1.5</druid.version>
+
+    <!--mybatis-generator自动生成
+    <mybatis-generator.version>1.3.2</mybatis-generator.version>-->
 
   </properties>
 
 
   <dependencies>
-    <!-- 添加jstl依赖 -->
-    <dependency>
-      <groupId>jstl</groupId>
-      <artifactId>jstl</artifactId>
-      <version>1.2</version>
-    </dependency>
-
-    <dependency>
-      <groupId>javax</groupId>
-      <artifactId>javaee-api</artifactId>
-      <version>7.0</version>
-    </dependency>
-
-    <!-- 添加junit4依赖 -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <!-- 指定范围，在测试时才会加载 -->
-      <scope>test</scope>
-    </dependency>
-
-    <!-- 添加spring核心依赖 -->
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-core</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-web</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-oxm</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-tx</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-jdbc</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-webmvc</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context-support</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-aop</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-test</artifactId>
-      <version>${spring.version}</version>
-    </dependency>
-
-    <!-- 添加mybatis依赖 -->
-    <dependency>
-      <groupId>org.mybatis</groupId>
-      <artifactId>mybatis</artifactId>
-      <version>${mybatis.version}</version>
-    </dependency>
-
-
-
-    <!-- 添加mybatis/spring整合包依赖 -->
-    <dependency>
-      <groupId>org.mybatis</groupId>
-      <artifactId>mybatis-spring</artifactId>
-      <version>1.2.4</version>
-    </dependency>
-
-    <!-- 添加mysql驱动依赖 -->
-    <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
-      <version>${mysql-driver.version}</version>
-    </dependency>
-    <!-- 添加数据库连接池依赖 -->
-    <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>druid</artifactId>
-      <version>1.0.18</version>
-    </dependency>
-
-    <!-- 添加fastjson -->
-    <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>fastjson</artifactId>
-      <version>1.2.3</version>
-    </dependency>
 
     <!-- 添加日志相关jar包 -->
     <dependency>
@@ -164,8 +57,145 @@
       <version>1.7.25</version>
       <scope>test</scope>
     </dependency>
+    <!-- 日志相关jar包添加完毕 -->
 
-    <!-- log end -->
+    <!-- servlet -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>3.0-alpha-1</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>7.0</version>
+    </dependency>
+
+    <!-- 添加junit4依赖 -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <!-- 指定范围，在测试时才会加载 -->
+      <scope>test</scope>
+    </dependency>
+
+    <!-- 添加spring相关依赖包 -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-oxm</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <!--事务管理-->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <!--<dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>${spring.version}</version>
+    </dependency>-->
+
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjweaver</artifactId>
+      <version>1.8.9</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+
+  <!--  &lt;!&ndash;Jpa依赖hibernate核心库&ndash;&gt;
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>5.2.13.Final</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-jpa</artifactId>
+      <version>1.11.4.RELEASE</version>
+    </dependency>-->
+
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>4.2.0.Final</version>
+    </dependency>
+
+
+    <!-- 添加mybatis依赖 -->
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+      <version>${mybatis.version}</version>
+    </dependency>
+
+    <!-- 添加mybatis/spring整合包依赖 -->
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis-spring</artifactId>
+      <version>1.2.4</version>
+    </dependency>
+
+    <!-- 添加mysql驱动依赖 -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>${mysql-driver.version}</version>
+    </dependency>
+    <!-- 添加数据库连接池依赖 -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+      <version>${druid.version}</version>
+    </dependency>
+
+    <!-- 添加fastjson -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.3</version>
+    </dependency>
+
     <!-- 映入JSON -->
     <dependency>
       <groupId>org.codehaus.jackson</groupId>
@@ -185,29 +215,18 @@
       <version>${jackson.version}</version>
     </dependency>
 
-    <!-- aop -->
-    <dependency>
-      <groupId>org.aspectj</groupId>
-      <artifactId>aspectjweaver</artifactId>
-      <version>1.8.4</version>
-    </dependency>
-    <!-- servlet -->
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>3.0-alpha-1</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
+    <!--<dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>jstl</artifactId>
       <version>1.2</version>
-    </dependency>
+    </dependency>-->
+
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
       <version>3.4</version>
     </dependency>
+
     <!-- 上传文件 -->
     <dependency>
       <groupId>commons-fileupload</groupId>
@@ -215,37 +234,44 @@
       <version>1.3.1</version>
     </dependency>
 
-      <dependency>
+     <!-- <dependency>
         <groupId>org.mybatis.generator</groupId>
         <artifactId>mybatis-generator-core</artifactId>
         <version>${mybatis-generator.version}</version>
-      </dependency>
+      </dependency>-->
+
+    <!-- 添加jstl依赖 -->
+    <dependency>
+      <groupId>jstl</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
 
   </dependencies>
 
   <build>
-    <finalName>SSM2.0</finalName>
+    <finalName>SharingWebapp</finalName>
     <plugins>
-      <plugin>
+      <!--<plugin>
         <groupId>org.mybatis.generator</groupId>
         <artifactId>mybatis-generator-maven-plugin</artifactId>
         <version>${mybatis-generator.version}</version>
         <configuration>
-          <!--配置文件的位置-->
-          <!--<configurationFile>src/main/resources/generatorConfig.xml</configurationFile>-->
+          &lt;!&ndash;配置文件的位置&ndash;&gt;
+          &lt;!&ndash;<configurationFile>src/main/resources/generatorConfig.xml</configurationFile>&ndash;&gt;
           <verbose>true</verbose>
           <overwrite>true</overwrite>
         </configuration>
-      </plugin>
+      </plugin>-->
     </plugins>
 
     <resources>
-      <resource>
+     <!-- <resource>
         <directory>src/main/java</directory>
         <includes>
           <include>**/*.xml</include>
         </includes>
-      </resource>
+      </resource>-->
     </resources>
   </build>
 </project>
