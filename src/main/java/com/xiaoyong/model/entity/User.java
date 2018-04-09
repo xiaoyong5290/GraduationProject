@@ -9,6 +9,7 @@ import java.util.Objects;
  * Description    :
  */
 @Entity
+@SuppressWarnings("unused")
 public class User {
     private int userid;
     private String username;

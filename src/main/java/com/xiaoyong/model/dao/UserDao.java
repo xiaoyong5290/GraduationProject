@@ -25,6 +25,7 @@ public interface UserDao extends JpaRepository<User,Integer>,
     @Override
     Page<User> findAll(Pageable pageable);
 
+    @Override
     @SuppressWarnings("unchecked")
     User save(User user);
 }

@@ -10,6 +10,7 @@ import java.util.Objects;
  * Description    :
  */
 @Entity
+@SuppressWarnings("unused")
 public class Clazz {
     private int clazzId;
     private String teacher;

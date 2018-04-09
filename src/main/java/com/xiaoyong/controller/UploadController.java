@@ -73,10 +73,10 @@ public class UploadController {
 
     /**
      *   描述：多文件上传
+     *   此处用@RequestParam（"xx"）来指定参数名，不加会报错
     **/
     @RequestMapping("/saveFiles")
     @ResponseBody
-    //此处用@RequestParam（"xx"）来指定参数名，不加会报错
     public String saveFiles(@RequestParam("upFiles") MultipartFile[] upFiles){
         String filePath = "D:\\temp\\";
 
