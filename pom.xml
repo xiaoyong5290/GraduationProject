@@ -30,9 +30,7 @@
     <!--druid数据源版本-->
     <druid.version>1.1.5</druid.version>
 
-    <!--mybatis-generator自动生成
-    <mybatis-generator.version>1.3.2</mybatis-generator.version>-->
-
+    <junit.version>4.12</junit.version>
   </properties>
 
 
@@ -77,7 +75,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <version>${junit.version}</version>
       <!-- 指定范围，在测试时才会加载 -->
       <scope>test</scope>
     </dependency>
@@ -112,12 +110,6 @@
       <artifactId>spring-tx</artifactId>
       <version>${spring.version}</version>
     </dependency>
-
-    <!--<dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-aop</artifactId>
-      <version>${spring.version}</version>
-    </dependency>-->
 
     <dependency>
       <groupId>org.aspectj</groupId>
@@ -160,21 +152,6 @@
       <artifactId>hibernate-validator</artifactId>
       <version>4.2.0.Final</version>
     </dependency>
-
-<!--
-    &lt;!&ndash; 添加mybatis依赖 &ndash;&gt;
-    <dependency>
-      <groupId>org.mybatis</groupId>
-      <artifactId>mybatis</artifactId>
-      <version>${mybatis.version}</version>
-    </dependency>
-
-    &lt;!&ndash; 添加mybatis/spring整合包依赖 &ndash;&gt;
-    <dependency>
-      <groupId>org.mybatis</groupId>
-      <artifactId>mybatis-spring</artifactId>
-      <version>1.2.4</version>
-    </dependency>-->
 
     <!-- 添加mysql驱动依赖 -->
     <dependency>
@@ -239,5 +216,15 @@
 
   <build>
     <finalName>GraduationProject</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>7</source>
+          <target>7</target>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>
