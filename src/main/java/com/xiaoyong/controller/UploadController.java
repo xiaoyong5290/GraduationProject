@@ -42,7 +42,7 @@ public class UploadController {
     public String saveFile(MultipartFile upFile) throws IOException {
 
         System.out.println("sad");
-        byte[] bytes = null;
+        byte[] bytes;
 
         Image image = new Image();
         if (!upFile.isEmpty()) {
@@ -51,21 +51,6 @@ public class UploadController {
             image.setData(bytes);
 
             return uploadService.saveImage(image);
-
-           /* String filePath = "D:\\temp\\";
-
-            File tempDir = new File(filePath);
-            if (!tempDir.exists()) {
-                tempDir.mkdirs();
-            }
-            saveFile = new File(filePath + upFile.getOriginalFilename());
-            try {
-                upFile.transferTo(saveFile);
-            } catch (IOException e) {
-                e.printStackTrace();
-                return "error !";
-            }
-            return "success !";*/
         }
         return "error !";
     }
